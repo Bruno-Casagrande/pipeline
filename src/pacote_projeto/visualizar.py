@@ -17,6 +17,9 @@ def gerar_figuras(df, pasta="imagens"):
     plt.savefig(f"{pasta}/scatter_cocoa_rating.png")
 
     plt.figure(figsize=(8,5))
-    df["company_location"].value_counts().head(10).plot(kind="bar")
+    df["company_location"].value_counts().head(10).sort_values().plot(kind="barh")
     plt.title("Top 10 países produtores")
+    plt.xlabel("Quantidade")
+    plt.ylabel("Pais")
+    plt.tight_layout()
     plt.savefig(f"{pasta}/top_paises.png")
